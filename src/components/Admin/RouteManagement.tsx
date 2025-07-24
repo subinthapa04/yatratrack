@@ -233,24 +233,6 @@ const RouteManagement: React.FC = () => {
                 </div>
               </div>
 
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Bus Stops</h4>
-                <div className="space-y-2">
-                  {route.stops.map((stop, index) => (
-                    <div key={index} className="flex items-center space-x-2 text-sm">
-                      <div className={`w-3 h-3 rounded-full ${
-                        index === 0 ? 'bg-green-500' : 
-                        index === route.stops.length - 1 ? 'bg-red-500' : 
-                        'bg-gray-300'
-                      }`} />
-                      <span className="text-gray-700">{stop}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-        ))}
-      </div>
 
       {/* Modal for Add/Edit Route */}
       {showModal && (
