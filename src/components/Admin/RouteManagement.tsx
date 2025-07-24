@@ -249,7 +249,6 @@ const RouteManagement: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
         ))}
       </div>
 
