@@ -178,7 +178,8 @@ const RouteManagement: React.FC = () => {
                       <span>{route.estimatedTime} mins</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      {/* <DollarSign className="h-4 w-4" />
+                      {/* 
+                      <DollarSign className="h-4 w-4" />
                       <span>NPR {route.fare}</span>
                     </div> 
                     */}
