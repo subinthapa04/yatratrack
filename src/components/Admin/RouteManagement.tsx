@@ -180,7 +180,8 @@ const RouteManagement: React.FC = () => {
                     <div className="flex items-center space-x-1">
                       {/* <DollarSign className="h-4 w-4" />
                       <span>NPR {route.fare}</span>
-                    </div> */}
+                    </div> 
+                    */}
                       <div className="flex items-center gap-2">  {/* Larger gap */}
                       <span>Rs</span>
                       <span>{route.fare}</span>
