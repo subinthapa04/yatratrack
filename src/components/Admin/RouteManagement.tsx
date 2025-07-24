@@ -178,17 +178,21 @@ const RouteManagement: React.FC = () => {
                       <span>{route.estimatedTime} mins</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      {/* 
+           
                       <DollarSign className="h-4 w-4" />
                       <span>NPR {route.fare}</span>
                     </div> 
-                    */}
-                      <div className="flex items-center gap-2">  {/* Larger gap */}
+        
+                      
+                      {/* 
+                      <div className="flex items-center gap-2">
                       <span>Rs</span>
                       <span>{route.fare}</span>
-                    </div>
+                    </div> 
+                    */}
+                      
                     <div className="flex items-center space-x-1">
-                      <Bus className="flex items-center gap-2"/>
+                      <Bus className="h-4 w-4"/>
                       <span>{route.buses} buses</span>
                     </div>
                   </div>
