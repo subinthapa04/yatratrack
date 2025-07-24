@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Plus, Edit, Trash2, Bus, Clock, Users, DollarSign } from 'lucide-react';
+import { MapPin, Plus, Edit, Trash2, Bus, Clock, Users } from 'lucide-react';
 
 const RouteManagement: React.FC = () => {
   const [routes, setRoutes] = useState([
@@ -178,11 +178,15 @@ const RouteManagement: React.FC = () => {
                       <span>{route.estimatedTime} mins</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <DollarSign className="h-4 w-4" />
+                      {/* <DollarSign className="h-4 w-4" />
                       <span>NPR {route.fare}</span>
+                    </div> */}
+                      <div className="flex items-center gap-2">  {/* Larger gap */}
+                      <span>Rs</span>
+                      <span>{route.fare}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Bus className="h-4 w-4" />
+                      <Bus className="flex items-center gap-2"/>
                       <span>{route.buses} buses</span>
                     </div>
                   </div>
