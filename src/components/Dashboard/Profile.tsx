@@ -8,9 +8,9 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ user }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
-    name: 'Rajesh Kumar',
+    name: 'User guest',
     email: user.email || '',
-    phone: '+977-9841234567',
+    phone: '+977-9********',
     address: 'Kathmandu, Nepal',
     favoriteRoute: 'Ratna Park - Bhaktapur',
     notifications: {
