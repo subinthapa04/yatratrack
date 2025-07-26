@@ -3,12 +3,12 @@ import { MapPin, Bus, Navigation, Zap } from 'lucide-react';
 
 const LiveMap: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<any>(null);
+  const leafletMapRef = useRef<any>(null);
   const [buses, setBuses] = useState<any[]>([]);
   const [selectedBus, setSelectedBus] = useState<any>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && mapRef.current) {
+    if (typeof window !== 'undefined' && mapRef.current && !leafletMapRef.current) {
       // Import Leaflet dynamically
       import('leaflet').then((L) => {
         // Initialize map
@@ -93,19 +93,22 @@ const LiveMap: React.FC = () => {
         });
 
         setBuses(mockBuses);
-        setMap(mapInstance);
+        leafletMapRef.current = mapInstance;
 
         // Cleanup
         return () => {
-          mapInstance.remove();
+          if (leafletMapRef.current) {
+            leafletMapRef.current.remove();
+            leafletMapRef.current = null;
+          }
         };
       });
     }
   }, []);
 
   const zoomToBus = (bus: any) => {
-    if (map) {
-      map.setView([bus.lat, bus.lng], 15);
+    if (leafletMapRef.current) {
+      leafletMapRef.current.setView([bus.lat, bus.lng], 15);
       setSelectedBus(bus);
     }
   };
@@ -195,7 +198,7 @@ const LiveMap: React.FC = () => {
                 className="w-full h-full"
                 style={{ minHeight: '400px' }}
               />
-              {!map && (
+              {!leafletMapRef.current && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
                   <div className="text-center">
                     <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
