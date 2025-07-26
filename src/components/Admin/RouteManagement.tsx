@@ -239,6 +239,23 @@ const RouteManagement: React.FC = () => {
                 </div>
               </div>
 
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-3">Bus Stops</h4>
+                <div className="flex flex-wrap gap-2">
+                  {route.stops.map((stop, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                    >
+                      {stop}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
       {/* Modal for Add/Edit Route */}
       {showModal && (
